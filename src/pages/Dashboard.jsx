@@ -50,6 +50,21 @@ const Dashboard = () => {
                 </span>
               </Link>
             </li>
+            <li>
+              <Link
+                to="/intervention"
+                className="flex items-center gap-4 py-2 px-4 rounded hover:bg-gray-700 transition-colors duration-300"
+              >
+                <FaFlag size={20} />
+                <span
+                  className={`transition-opacity duration-300 ${
+                    isSidebarHovered ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  Manage Intervention
+                </span>
+              </Link>
+            </li>
 
             <li>
               <Link

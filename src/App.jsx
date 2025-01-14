@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "../src/pages/Home";
 import SignupPage from "../src/pages/SignupPage";
 import "./App.css";
+import InterventionForm from "./components/InterventionForm";
 import Report from "./components/Report";
 import UserProfile from "./components/UserProfile";
 import CreateIntervention from "./pages/CreateIntervention";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/red-flags" element={<RedFlags />} />
+        <Route path="/intervention" element={<InterventionForm />} />
         <Route path="/report" element={<Report />} />
         <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/createintervention" element={<CreateIntervention />} />
