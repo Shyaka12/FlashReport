@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { FiArrowLeft, FiCheckCircle, FiMapPin, FiX } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
-const RecordForm = ({ onAddRecord, editingRecord, onGoBack }) => {
+const RecordForm = ({ onAddRecord, editingRecord }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -86,8 +88,8 @@ const RecordForm = ({ onAddRecord, editingRecord, onGoBack }) => {
         {/* Back Button */}
         <button
           type="button"
-          onClick={onGoBack}
-          className="absolute top-4 left-4 flex items-center text-gray-500 hover:text-gray-700 transition"
+          onClick={() => navigate("/dashboard")}
+          className="absolute top-4 left-4 flex items-center text-gray-500 hover:text--700 transition"
         >
           <FiArrowLeft className="mr-2" />
           Back
@@ -235,7 +237,6 @@ const RecordForm = ({ onAddRecord, editingRecord, onGoBack }) => {
 RecordForm.propTypes = {
   onAddRecord: PropTypes.func.isRequired,
   editingRecord: PropTypes.object,
-  onGoBack: PropTypes.func.isRequired,
 };
 
 export default RecordForm;

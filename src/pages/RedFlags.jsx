@@ -12,7 +12,7 @@ const RedFlags = () => {
 
   return (
     <div className="p-8 bg-black-100 min-h-screen">
-      <h1 className="text-3xl font-bold mb-4">Manage Red-Flags</h1>
+      <h1 className="text-3xl font-bold mb-4">Red-Flags</h1>
       <RecordForm onAddRecord={addRecord} />
       <RecordList records={records} onDeleteRecord={deleteRecord} />
     </div>

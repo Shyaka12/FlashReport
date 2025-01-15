@@ -1,7 +1,9 @@
-import { Camera, MapPin, X } from "lucide-react";
+import { ArrowLeft, Camera, MapPin, X } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const InterventionForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -54,12 +56,20 @@ const InterventionForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
     console.log("Form submitted:", formData);
   };
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow">
+      {/* Back to Dashboard Icon */}
+      <button
+        onClick={() => navigate("/dashboard")}
+        className="flex items-center mb-6 text-blue-600 hover:text-blue-800"
+      >
+        <ArrowLeft className="h-5 w-5 mr-2" />
+        Back
+      </button>
+
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
         Submit Intervention Record
       </h2>
@@ -164,17 +174,17 @@ const InterventionForm = () => {
             </label>
             <input
               type="number"
-              id="latitude"
-              name="latitude"
-              value={formData.location.lat}
+              id="longitude"
+              name="longitude"
+              value={formData.location.lng}
               onChange={(e) =>
                 setFormData((prev) => ({
                   ...prev,
-                  location: { ...prev.location, lat: e.target.value },
+                  location: { ...prev.location, lng: e.target.value },
                 }))
               }
               step="any"
-              placeholder="e.g., -1.9441"
+              placeholder="e.g., 29.8739"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
             />
           </div>
@@ -183,9 +193,9 @@ const InterventionForm = () => {
         {/* Location Picker Button */}
         <button
           type="button"
-          className="flex items-center  border-gray-300 text-blue-600 hover:text-blue-700"
+          className="flex items-center border-gray-300 text-blue-600 hover:text-blue-700"
         >
-          <MapPin className="h-5 w-5 mr-2  border-gray-300" />
+          <MapPin className="h-5 w-5 mr-2" />
           Pick location on map
         </button>
 

@@ -1,6 +1,9 @@
 import "react";
+import { useNavigate } from "react-router-dom";
 
 const Report = () => {
+  const navigate = useNavigate();
+
   // Mock Data
   const resolvedCount = 12;
   const unresolvedCount = 8;
@@ -29,7 +32,16 @@ const Report = () => {
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Report</h1>
+      {/* Header Section */}
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold text-gray-800">Report</h1>
+        <button
+          onClick={() => navigate("/dashboard")}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md transition-all duration-200"
+        >
+          Back
+        </button>
+      </div>
 
       {/* Card Section */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
