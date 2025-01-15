@@ -122,7 +122,7 @@ const LoginPage = () => {
           <p className="text-sm text-gray-500 text-center mb-8">
             Don’t have an account?{" "}
             <a
-              href="/signup"
+              href="/src/pages/SignupPage.jsx"
               className="text-blue-600 font-medium hover:underline"
             >
               Create one here
