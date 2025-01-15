@@ -2,7 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    role: "user", // Default role
+  });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
@@ -20,11 +24,18 @@ const LoginPage = () => {
       return;
     }
 
-    // Simulate successful login
-    console.log("Logged in successfully!", formData);
-    setErrorMessage("");
-    // Navigate to a dashboard or homepage after successful login
-    navigate("/dashboard");
+    // Simulate authentication and role-based navigation
+    if (formData.role === "admin") {
+      console.log("Admin logged in!");
+      navigate("/admin-dashboard"); // Redirect to admin dashboard
+    } else if (formData.role === "user") {
+      console.log("User logged in!");
+      navigate("/dashboard"); // Redirect to user dashboard
+    } else {
+      setErrorMessage("Invalid role!");
+    }
+
+    setErrorMessage(""); // Clear any previous errors
   };
 
   return (
@@ -47,7 +58,7 @@ const LoginPage = () => {
             {/* Email */}
             <div>
               <label
-                className="block text-gray-700 font-medium mb-2 "
+                className="block text-gray-700 font-medium mb-2"
                 htmlFor="email"
               >
                 Email Address
@@ -66,7 +77,7 @@ const LoginPage = () => {
             {/* Password */}
             <div>
               <label
-                className="block  text-gray-700 text-black-700 font-medium mb-2"
+                className="block text-gray-700 font-medium mb-2"
                 htmlFor="password"
               >
                 Password
@@ -78,8 +89,28 @@ const LoginPage = () => {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="Enter your password"
-                className="w-full px-4 py-3 border border-gray-300 text-black bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-gray-300 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+            </div>
+
+            {/* Role Selection */}
+            <div>
+              <label
+                className="block text-gray-700 font-medium mb-2"
+                htmlFor="role"
+              >
+                Role
+              </label>
+              <select
+                id="role"
+                name="role"
+                value={formData.role}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
             </div>
 
             {/* Error Message */}

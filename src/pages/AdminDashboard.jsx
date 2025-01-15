@@ -34,61 +34,58 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-6 py-6">
-        {/* Records Table */}
-        <div className="bg-white shadow-lg rounded-lg p-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">All Records</h2>
-          <table className="w-full table-auto border-collapse border border-gray-300">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border border-gray-300 px-4 py-2">ID</th>
-                <th className="border border-gray-300 px-4 py-2">Title</th>
-                <th className="border border-gray-300 px-4 py-2">Type</th>
-                <th className="border border-gray-300 px-4 py-2">Status</th>
-                <th className="border border-gray-300 px-4 py-2">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {records.map((record) => (
-                <tr key={record.id}>
-                  <td className="border border-gray-300 px-4 py-2">
-                    {record.id}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    {record.title}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    {record.type}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    <span
-                      className={`px-3 py-1 rounded-full text-sm ${
-                        record.status === "Pending"
-                          ? "bg-yellow-100 text-yellow-800"
-                          : record.status === "Resolved"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-red-100 text-red-800"
-                      }`}
-                    >
-                      {record.status}
-                    </span>
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    <select
-                      value={record.status}
-                      onChange={(e) =>
-                        handleStatusChange(record.id, e.target.value)
-                      }
-                      className="border border-gray-300 px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="Pending">Pending</option>
-                      <option value="Resolved">Resolved</option>
-                      <option value="Dismissed">Dismissed</option>
-                    </select>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Records Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {records.map((record) => (
+            <div
+              key={record.id}
+              className="bg-white shadow-lg rounded-lg p-6 border border-gray-300"
+            >
+              <h3 className="text-lg font-bold text-gray-800 mb-2">
+                {record.title}
+              </h3>
+              <p className="text-sm text-gray-600">
+                <strong>ID:</strong> {record.id}
+              </p>
+              <p className="text-sm text-gray-600">
+                <strong>Type:</strong> {record.type}
+              </p>
+              <p className="text-sm text-gray-600 mb-4">
+                <strong>Status:</strong>
+                <span
+                  className={`inline-block px-3 py-1 rounded-full text-sm ml-2 ${
+                    record.status === "Pending"
+                      ? "bg-yellow-100 text-yellow-800"
+                      : record.status === "Resolved"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {record.status}
+                </span>
+              </p>
+              <div>
+                <label
+                  htmlFor={`status-${record.id}`}
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Update Status:
+                </label>
+                <select
+                  id={`status-${record.id}`}
+                  value={record.status}
+                  onChange={(e) =>
+                    handleStatusChange(record.id, e.target.value)
+                  }
+                  className="mt-1 block w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="Pending">Pending</option>
+                  <option value="Resolved">Resolved</option>
+                  <option value="Dismissed">Dismissed</option>
+                </select>
+              </div>
+            </div>
+          ))}
         </div>
       </main>
     </div>

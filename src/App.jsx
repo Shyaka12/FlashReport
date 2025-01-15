@@ -5,6 +5,7 @@ import "./App.css";
 import InterventionForm from "./components/InterventionForm";
 import Report from "./components/Report";
 import UserProfile from "./components/UserProfile";
+import AdminDashboard from "./pages/AdminDashboard";
 import CreateIntervention from "./pages/CreateIntervention";
 import Dashboard from "./pages/Dashboard";
 import LoginPage from "./pages/LoginPage";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/red-flags" element={<RedFlags />} />
         <Route path="/intervention" element={<InterventionForm />} />
         <Route path="/report" element={<Report />} />
