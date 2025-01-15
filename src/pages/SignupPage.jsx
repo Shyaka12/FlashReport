@@ -39,17 +39,17 @@ const SignupPage = () => {
   return (
     <div className="flex flex-col md:flex-row h-screen">
       {/* Left Section */}
-      <div className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white flex flex-col justify-center items-center w-full md:w-1/2 px-6 py-12">
+      <div className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white flex flex-col justify-center items-center w-full md:w-1/2 px-6 py-8">
         <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-1">
             Welcome to Our Platform!
           </h1>
-          <p className="text-base md:text-lg leading-relaxed">
+          <p className="text-sm md:text-base leading-relaxed">
             Sign up now and unlock exclusive features tailored just for you.
           </p>
           <button
             onClick={() => navigate("/")}
-            className="mt-6 bg-white text-blue-700 px-6 py-2 rounded-lg shadow-md font-medium hover:bg-gray-200 transition"
+            className="mt-4 bg-white text-blue-700 px-6 py-2 rounded-lg shadow-md font-medium hover:bg-gray-200 transition"
           >
             Back to Home
           </button>
@@ -57,9 +57,9 @@ const SignupPage = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-8 bg-gray-50">
+      <div className="flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-6 bg-gray-50">
         <div className="bg-white rounded-lg shadow-lg w-full max-w-sm p-6">
-          <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
+          <h2 className="text-xl font-bold text-gray-800 text-center mb-3">
             Create Your Account
           </h2>
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -151,7 +151,7 @@ const SignupPage = () => {
             >
               Sign Up
             </button>
-            <p className="text-sm text-gray-500 text-center mt-4">
+            <p className="text-sm text-gray-500 text-center mt-3">
               Already have an account?{" "}
               <a
                 href="/login"
