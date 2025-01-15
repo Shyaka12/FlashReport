@@ -88,7 +88,7 @@ const AdminDashboard = () => {
                   onChange={(e) =>
                     handleStatusChange(record.id, e.target.value)
                   }
-                  className="mt-1 block w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="mt-1 block w-full border bg-blue-900 border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value="Pending">Pending</option>
                   <option value="Resolved">Resolved</option>
