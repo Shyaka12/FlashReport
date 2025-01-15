@@ -5,10 +5,6 @@ const Report = () => {
   const navigate = useNavigate();
 
   // Mock Data
-  const resolvedCount = 12;
-  const unresolvedCount = 8;
-  const rejectedCount = 4;
-
   const records = [
     {
       id: 1,
@@ -30,6 +26,29 @@ const Report = () => {
     },
   ];
 
+  const getStatusStyles = (status) => {
+    switch (status) {
+      case "Resolved":
+        return "bg-green-100 text-green-700";
+      case "Under Investigation":
+        return "bg-yellow-100 text-yellow-700";
+      case "Rejected":
+        return "bg-red-100 text-red-700";
+      default:
+        return "bg-gray-100 text-gray-700";
+    }
+  };
+
+  const resolvedCount = records.filter(
+    (record) => record.status === "Resolved"
+  ).length;
+  const unresolvedCount = records.filter(
+    (record) => record.status === "Under Investigation"
+  ).length;
+  const rejectedCount = records.filter(
+    (record) => record.status === "Rejected"
+  ).length;
+
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       {/* Header Section */}
@@ -43,13 +62,13 @@ const Report = () => {
         </button>
       </div>
 
-      {/* Card Section */}
+      {/* Summary Section */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="bg-white shadow-md rounded-lg p-6 text-center">
           <h2 className="text-xl font-semibold text-gray-700">
             Resolved Records
           </h2>
-          <p className="text-4xl font-bold text-blue-500">{resolvedCount}</p>
+          <p className="text-4xl font-bold text-green-500">{resolvedCount}</p>
         </div>
         <div className="bg-white shadow-md rounded-lg p-6 text-center">
           <h2 className="text-xl font-semibold text-gray-700">
@@ -67,33 +86,26 @@ const Report = () => {
         </div>
       </section>
 
-      {/* Table Section */}
-      <section className="bg-white shadow-md rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-gray-700 mb-4">All Records</h2>
-        <table className="w-full border-collapse border border-gray-300">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border border-gray-300 p-2 text-left">ID</th>
-              <th className="border border-gray-300 p-2 text-left">Type</th>
-              <th className="border border-gray-300 p-2 text-left">Status</th>
-              <th className="border border-gray-300 p-2 text-left">
-                Description
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {records.map((record) => (
-              <tr key={record.id}>
-                <td className="border border-gray-300 p-2">{record.id}</td>
-                <td className="border border-gray-300 p-2">{record.type}</td>
-                <td className="border border-gray-300 p-2">{record.status}</td>
-                <td className="border border-gray-300 p-2">
-                  {record.description}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Cards Section */}
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {records.map((record) => (
+          <div
+            key={record.id}
+            className="bg-white shadow-md rounded-lg p-6 border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-xl"
+          >
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              {record.type}
+            </h2>
+            <p
+              className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getStatusStyles(
+                record.status
+              )}`}
+            >
+              {record.status}
+            </p>
+            <p className="mt-4 text-gray-600">{record.description}</p>
+          </div>
+        ))}
       </section>
     </div>
   );
