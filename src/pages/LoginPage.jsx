@@ -43,6 +43,12 @@ const LoginPage = () => {
         <p className="text-lg mb-6 text-center">
           Log in to continue accessing your account.
         </p>
+        <button
+          onClick={() => navigate("/")}
+          className="bg-white text-blue-700 px-6 py-2 rounded-lg shadow-md font-medium hover:bg-gray-200 transition"
+        >
+          Back to Home
+        </button>
       </div>
 
       {/* Right Section */}
