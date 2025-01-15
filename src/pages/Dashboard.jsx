@@ -4,6 +4,7 @@ import {
   FaChevronRight,
   FaFlag,
   FaPlusCircle,
+  FaSignOutAlt,
   FaUser,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
@@ -16,6 +17,12 @@ const Dashboard = () => {
   const handleMouseEnter = () => setIsSidebarHovered(true);
   const handleMouseLeave = () => setIsSidebarHovered(false);
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
+  const handleSignOut = () => {
+    // Clear user session (if stored) and redirect to the login page
+    console.log("User signed out");
+    navigate("/login"); // Replace with your actual login route
+  };
 
   const handleCreateRedFlag = () => {
     navigate("/red-flags"); // Replace with your actual route
@@ -100,6 +107,23 @@ const Dashboard = () => {
           </ul>
         </nav>
 
+        {/* Sign Out Button */}
+        <div className="p-4">
+          <button
+            onClick={handleSignOut}
+            className="flex items-center gap-4 w-full text-left py-2 px-4 rounded bg-red-500 hover:bg-red-600 transition-colors duration-300"
+          >
+            <FaSignOutAlt size={20} />
+            <span
+              className={`transition-opacity duration-300 ${
+                isSidebarOpen || isSidebarHovered ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              Sign Out
+            </span>
+          </button>
+        </div>
+
         {/* Footer */}
         <footer className="p-4 text-center text-sm text-gray-400">
           {isSidebarHovered ? "© 2025 Dashboard" : "© 2025"}
@@ -108,7 +132,18 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <main className="flex-1 p-4 sm:p-8 pt-20 sm:pt-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative">
+          {/* Sign Out Button (Top Right) */}
+          <div className="absolute top-0 right-0">
+            <button
+              onClick={handleSignOut}
+              className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+            >
+              Sign Out
+            </button>
+          </div>
+
+          {/* Welcome Section */}
           <h1 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
             Welcome to Your Dashboard
           </h1>
