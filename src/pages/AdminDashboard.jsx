@@ -66,7 +66,7 @@ const AdminDashboard = () => {
                 <span
                   className={`inline-block px-3 py-1 rounded-full text-sm ml-2 ${
                     record.status === "Pending"
-                      ? "bg-yellow-100 text-yellow-800"
+                      ? ""
                       : record.status === "Resolved"
                       ? "bg-green-100 text-green-800"
                       : "bg-red-100 text-red-800"

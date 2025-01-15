@@ -5,7 +5,6 @@ const LoginPage = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    role: "user", // Default role
   });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -24,15 +23,13 @@ const LoginPage = () => {
       return;
     }
 
-    // Simulate authentication and role-based navigation
-    if (formData.role === "admin") {
+    // Determine role based on email
+    if (formData.email.includes("admin")) {
       console.log("Admin logged in!");
       navigate("/admin-dashboard"); // Redirect to admin dashboard
-    } else if (formData.role === "user") {
+    } else {
       console.log("User logged in!");
       navigate("/dashboard"); // Redirect to user dashboard
-    } else {
-      setErrorMessage("Invalid role!");
     }
 
     setErrorMessage(""); // Clear any previous errors
@@ -91,26 +88,6 @@ const LoginPage = () => {
                 placeholder="Enter your password"
                 className="w-full px-4 py-3 border border-gray-300 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-            </div>
-
-            {/* Role Selection */}
-            <div>
-              <label
-                className="block text-gray-700 font-medium mb-2"
-                htmlFor="role"
-              >
-                Role
-              </label>
-              <select
-                id="role"
-                name="role"
-                value={formData.role}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-              </select>
             </div>
 
             {/* Error Message */}
