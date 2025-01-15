@@ -3,7 +3,7 @@ import { FiEdit, FiTrash } from "react-icons/fi";
 
 const RecordList = ({ records, onDeleteRecord, onEditRecord }) => (
   <div className="mt-8">
-    <h2 className="text-xl font-bold text-black">Records</h2>
+    <h2 className="text-xl font-bold text-white">Records</h2>
     {records.length === 0 ? (
       <p className="text-black-500">No records available.</p>
     ) : (
