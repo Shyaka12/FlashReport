@@ -54,7 +54,7 @@ const Dashboard = () => {
       >
         <div className="p-4 flex items-center justify-between">
           <h2
-            className={`text-xl font-bold text-yellow-400 transition-opacity duration-300 ${
+            className={`text-xl font-bold text-white transition-opacity duration-300 ${
               isSidebarOpen || isSidebarHovered ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -66,7 +66,7 @@ const Dashboard = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-grow">
+        <nav className="flex-grow text-white">
           <ul className="space-y-4 p-4">
             {[
               {
@@ -88,7 +88,7 @@ const Dashboard = () => {
               <li key={index}>
                 <Link
                   to={item.to}
-                  className="flex items-center gap-4 py-2 px-4 rounded hover:bg-gray-700 transition-colors duration-300"
+                  className="flex items-center text-white gap-4 py-2 px-4 rounded hover:bg-white transition-colors duration-300"
                   onClick={() => setIsSidebarOpen(false)}
                 >
                   {item.icon}
@@ -111,7 +111,7 @@ const Dashboard = () => {
         <div className="p-4">
           <button
             onClick={handleSignOut}
-            className="flex items-center gap-4 w-full text-left py-2 px-4 rounded bg-red-500 hover:bg-red-600 transition-colors duration-300"
+            className="flex items-center gap-4 w-full text-left py-2 px-4 rounded bg-gray-800 hover:bg-blue-600 transition-colors duration-300"
           >
             <FaSignOutAlt size={20} />
             <span
@@ -137,7 +137,7 @@ const Dashboard = () => {
           <div className="absolute top-0 right-0">
             <button
               onClick={handleSignOut}
-              className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+              className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
             >
               Sign Out
             </button>
@@ -164,7 +164,7 @@ const Dashboard = () => {
               </p>
               <button
                 onClick={handleCreateRedFlag}
-                className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+                className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Create Red Flag
               </button>
@@ -181,7 +181,7 @@ const Dashboard = () => {
               </p>
               <button
                 onClick={handleCreateIntervention}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+                className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Create Intervention
               </button>
