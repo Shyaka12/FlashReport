@@ -47,6 +47,12 @@ const SignupPage = () => {
           <p className="text-base md:text-lg leading-relaxed">
             Sign up now and unlock exclusive features tailored just for you.
           </p>
+          <button
+            onClick={() => navigate("/")}
+            className="mt-6 bg-white text-blue-700 px-6 py-2 rounded-lg shadow-md font-medium hover:bg-gray-200 transition"
+          >
+            Back to Home
+          </button>
         </div>
       </div>
 
