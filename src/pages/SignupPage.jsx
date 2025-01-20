@@ -31,7 +31,7 @@ const SignupPage = () => {
     }
 
     console.log("Account created successfully!", formData);
-    navigate("/login"); // Redirect to login page after signup
+    navigate("/login");
   };
 
   return (

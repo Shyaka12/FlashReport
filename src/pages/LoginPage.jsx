@@ -53,7 +53,7 @@ const LoginPage = () => {
 
       {/* Right Section */}
       <div className="bg-gray-100 flex justify-center items-center w-1/2">
-        <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8">
+        <div className="bg-white rounded-lg shadow-2xl hover:shadow-lg w-full max-w-md p-8">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-4">
             Login
           </h2>
@@ -73,7 +73,7 @@ const LoginPage = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 border border-gray-300 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border  bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
@@ -104,7 +104,7 @@ const LoginPage = () => {
             {/* Login Button */}
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 transition"
             >
               Log In
             </button>
