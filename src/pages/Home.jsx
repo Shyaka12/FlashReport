@@ -31,9 +31,7 @@ function Home() {
             FLASHREPORT
           </span>
         </h2>
-        <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl px-4">
-          Empowering you with the best tools and services to achieve your goals.
-        </p>
+        <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl px-4"></p>
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto px-4">
           <Link
             to="/login"
