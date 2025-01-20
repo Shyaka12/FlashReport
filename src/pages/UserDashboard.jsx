@@ -38,7 +38,6 @@ export const UserDashboard = () => {
         <div className="px-4 py-6 sm:px-0">
           <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 p-4">
             <h2 className="text-2xl font-bold mb-4">Your Reports</h2>
-            {/* Add your user dashboard content here */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="bg-white p-4 rounded-lg shadow">
                 <h3 className="font-bold text-lg mb-2">Red Flags</h3>

@@ -20,7 +20,6 @@ const SignupPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (formData.password !== formData.confirmPassword) {
       setErrorMessage("Passwords do not match!");
       return;
@@ -31,7 +30,6 @@ const SignupPage = () => {
       return;
     }
 
-    // Simulate successful signup and redirect
     console.log("Account created successfully!", formData);
     navigate("/login"); // Redirect to login page after signup
   };
