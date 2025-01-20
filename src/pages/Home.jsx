@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col">
+    <div className="bg-gray-900 text-white h-screen w-screen flex flex-col">
       {/* Header */}
       <header className="flex flex-col sm:flex-row justify-between items-center p-4 sm:p-6 bg-gray-800 shadow-md">
         <h1 className="text-2xl font-bold mb-4 sm:mb-0">FLASHREPORT</h1>

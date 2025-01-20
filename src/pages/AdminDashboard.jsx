@@ -28,7 +28,7 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-blue-800 text-white shadow-lg">
+      <aside className="w-64 bg-gray-800 text-white shadow-lg">
         <div className="py-6 px-4">
           <h2 className="text-2xl font-bold mb-6">Admin Panel</h2>
           <nav>
@@ -42,15 +42,7 @@ const AdminDashboard = () => {
                   Dashboard
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => navigate("/reports")}
-                  className="w-full text-left block px-4 py-2 rounded-lg transition-colors 
-              bg-blue-700 hover:bg-white hover:text-black focus:bg-blue-600 active:bg-red-500"
-                >
-                  Reports
-                </button>
-              </li>
+
               <li>
                 <button
                   onClick={() => navigate("/settings")}
@@ -67,7 +59,7 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
       <div className="flex-1">
-        <header className="bg-blue-600 text-white py-4 shadow-md">
+        <header className="bg-gray-800 text-white py-4 shadow-md">
           <div className="container mx-auto px-6 flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold">Admin Dashboard</h1>
