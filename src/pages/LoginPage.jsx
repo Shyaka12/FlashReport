@@ -52,8 +52,8 @@ const LoginPage = () => {
       </div>
 
       {/* Right Section */}
-      <div className="bg-gray-100 flex justify-center items-center w-1/2">
-        <div className="bg-white rounded-lg shadow-2xl hover:shadow-lg w-full max-w-md p-8">
+      <div className="bg-gray-200 flex justify-center items-center w-1/2 ">
+        <div className=" bg-gray-300 bg-opacity-100 rounded-lg shadow-2xl hover:shadow-lg w-full max-w-md p-8">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-4">
             Login
           </h2>
@@ -102,12 +102,14 @@ const LoginPage = () => {
             )}
 
             {/* Login Button */}
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 transition"
-            >
-              Log In
-            </button>
+            <div className="flex justify-center items-center">
+              <button
+                type="submit"
+                className=" w-24 h-8 rounded-full bg-blue-600 text-white px-2 py-1  font-medium hover:bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 transition"
+              >
+                Log In
+              </button>
+            </div>
           </form>
 
           {/* Forgot Password */}
