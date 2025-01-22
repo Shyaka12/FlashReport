@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 const AdminDashboard = () => {
   const navigate = useNavigate();
 
-  // Sample data for red-flag/intervention records
   const [records, setRecords] = useState([
     { id: 1, title: "Red Flag 1", status: "Pending", type: "Red-Flag" },
     {
@@ -17,7 +16,6 @@ const AdminDashboard = () => {
     { id: 4, title: "Intervention 2", status: "Pending", type: "Intervention" },
   ]);
 
-  // Update the status of a record
   const handleStatusChange = (id, newStatus) => {
     const updatedRecords = records.map((record) =>
       record.id === id ? { ...record, status: newStatus } : record
@@ -27,7 +25,6 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex">
-      {/* Sidebar */}
       <aside className="w-64 bg-gray-800 text-white shadow-lg">
         <div className="py-6 px-4">
           <h2 className="text-2xl font-bold mb-6">Admin Panel</h2>
@@ -57,7 +54,6 @@ const AdminDashboard = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
       <div className="flex-1">
         <header className="bg-gray-800 text-white py-4 shadow-md">
           <div className="container mx-auto px-6 flex justify-between items-center">

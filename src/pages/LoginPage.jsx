@@ -37,7 +37,6 @@ const LoginPage = () => {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Left Section */}
       <div className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white flex flex-col justify-center items-center w-1/2">
         <h1 className="text-5xl font-bold mb-4">Welcome Back!</h1>
         <p className="text-lg mb-6 text-center">
@@ -51,14 +50,12 @@ const LoginPage = () => {
         </button>
       </div>
 
-      {/* Right Section */}
       <div className="bg-gray-200 flex justify-center items-center w-1/2 ">
         <div className=" bg-gray-300 bg-opacity-100 rounded-lg shadow-2xl hover:shadow-lg w-full max-w-md p-8">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-4">
             Login
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
-            {/* Email */}
             <div>
               <label
                 className="block text-gray-700 font-medium mb-2"
@@ -76,8 +73,6 @@ const LoginPage = () => {
                 className="w-full px-4 py-3 border  bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
-            {/* Password */}
             <div>
               <label
                 className="block text-gray-700 font-medium mb-2"

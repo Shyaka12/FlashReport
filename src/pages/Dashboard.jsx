@@ -19,22 +19,20 @@ const Dashboard = () => {
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   const handleSignOut = () => {
-    // Clear user session (if stored) and redirect to the login page
     console.log("User signed out");
-    navigate("/login"); // Replace with your actual login route
+    navigate("/login");
   };
 
   const handleCreateRedFlag = () => {
-    navigate("/red-flags"); // Replace with your actual route
+    navigate("/red-flags");
   };
 
   const handleCreateIntervention = () => {
-    navigate("/intervention"); // Replace with your actual route
+    navigate("/intervention");
   };
 
   return (
     <div className="flex flex-col sm:flex-row min-h-screen bg-gray-100">
-      {/* Mobile Header */}
       <div className="sm:hidden bg-gray-800 p-4 flex justify-between items-center">
         <h2 className="text-xl font-bold text-yellow-400">Dashboard</h2>
         <button onClick={toggleSidebar} className="text-white">
@@ -42,7 +40,6 @@ const Dashboard = () => {
         </button>
       </div>
 
-      {/* Sidebar */}
       <aside
         className={`${
           isSidebarOpen || isSidebarHovered ? "w-64" : "w-0 sm:w-20"
@@ -107,7 +104,6 @@ const Dashboard = () => {
           </ul>
         </nav>
 
-        {/* Sign Out Button */}
         <div className="p-4">
           <button
             onClick={handleSignOut}
@@ -124,16 +120,13 @@ const Dashboard = () => {
           </button>
         </div>
 
-        {/* Footer */}
         <footer className="p-4 text-center text-sm text-gray-400">
           {isSidebarHovered ? "© 2025 Dashboard" : "© 2025"}
         </footer>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 p-4 sm:p-8 pt-20 sm:pt-8">
         <div className="max-w-7xl mx-auto relative">
-          {/* Sign Out Button (Top Right) */}
           <div className="absolute top-0 right-0">
             <button
               onClick={handleSignOut}
@@ -143,7 +136,6 @@ const Dashboard = () => {
             </button>
           </div>
 
-          {/* Welcome Section */}
           <h1 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
             Welcome to Your Dashboard
           </h1>

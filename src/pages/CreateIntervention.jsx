@@ -13,7 +13,6 @@ const CreateIntervention = () => {
   const [loadingLocation, setLoadingLocation] = useState(false);
 
   useEffect(() => {
-    // Automatically fetch location on component mount
     getLocation();
   }, []);
 
