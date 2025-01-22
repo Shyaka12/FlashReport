@@ -91,12 +91,10 @@ const LoginPage = () => {
               />
             </div>
 
-            {/* Error Message */}
             {errorMessage && (
               <p className="text-red-500 text-sm text-center">{errorMessage}</p>
             )}
 
-            {/* Login Button */}
             <div className="flex justify-center items-center">
               <button
                 type="submit"
@@ -107,7 +105,6 @@ const LoginPage = () => {
             </div>
           </form>
 
-          {/* Forgot Password */}
           <p className="text-center text-sm text-gray-600 mt-4">
             <a
               href="/forgot-password"

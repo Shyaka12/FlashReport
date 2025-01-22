@@ -55,8 +55,8 @@ const SignupPage = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-6 bg-gray-50">
-        <div className="bg-white rounded-lg shadow-lg w-full max-w-sm p-6">
+      <div className="flex flex-col justify-center items-center w-full md:w-1/2 px-4 py-6 bg-gray-200">
+        <div className="bg-gray-300 bg-opacity-100 rounded-lg shadow-2xl hover:shadow-lg w-full max-w-md p-8">
           <h2 className="text-xl font-bold text-gray-800 text-center mb-3">
             Create Your Account
           </h2>
