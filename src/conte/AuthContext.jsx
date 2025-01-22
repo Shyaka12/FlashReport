@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
     try {
       // Simulate API call
       // In a real app, you'd make an actual API request here
-      if (email === "admin@example.com" && password === "admin123") {
+      if (email === "admin@gmail.com" && password === "admin123") {
         const adminUser = {
           id: 1,
           email,
